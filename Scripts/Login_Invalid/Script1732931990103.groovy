@@ -17,5 +17,10 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser()
-
+WebUI.openBrowser('https://katalon-demo-cura.herokuapp.com/')
+WebUI.click(findTestObject('Page_CURA Healthcare Service/a_Make Appointment'))
+WebUI.setText(findTestObject('Page_CURA Healthcare Service/input_Username_username'), 'John')
+WebUI.setEncryptedText(findTestObject('Page_CURA Healthcare Service/input_Password_password'), 'g3/DOGG74jC3Flrr3yH+3D/yKbOqqUNM')
+WebUI.click(findTestObject('Page_CURA Healthcare Service/button_Login'))
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_CURA Healthcare Service/p_Login failed Please ensure the username and password are valid'), 1)
+WebUI.takeScreenshot('C:/Users/Jeremy Villanueva/Pictures/Taller Katalon/inicio_sesion_invalid.png')
